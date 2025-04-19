@@ -37,4 +37,6 @@
     shellAliases = import ./aliases.nix;
     initExtra = builtins.readFile ./init-extra.zsh;
   };
+
+  home.file.".config/fastfetch/config.jsonc".source = ./config.jsonc;
 }
