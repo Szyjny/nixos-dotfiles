@@ -1,0 +1,31 @@
+window {
+  color: white;
+  background-color: #323232;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+entry {
+  background-color: rgba(255, 255, 255, 0.0);
+  /* Przezroczyste tło paska wyszukiwania */
+  color: white;
+  /* Kolor tekstu w pasku wyszukiwania */
+  padding: 8px;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+entry:focus {
+  border-radius: 0;
+  outline: solid 1px #5e81ac;
+}
+
+#entry:selected {
+  background-color: #5e81ac;
+  color: white;
+}
+
+* {
+  font-family: "Space Mono NerdFont", sans-serif;
+  font-size: 14px;
+}
