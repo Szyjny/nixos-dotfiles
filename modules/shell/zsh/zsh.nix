@@ -28,6 +28,13 @@
     # Others
     btop
     tldr
+    unzip
+
+    lua-language-server
+    clang-tools  # clangd
+    rust-analyzer
+    gcc
+    acpi
   ];
 
   programs.zsh = {

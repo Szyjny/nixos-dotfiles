@@ -10,6 +10,7 @@
     bun
 
     python3
+    marksman
 
     # Libraries
     # manim

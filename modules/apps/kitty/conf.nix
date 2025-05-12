@@ -10,7 +10,8 @@
       package = pkgs.nerd-fonts.space-mono;
     };
     settings = {
-      background_opacity = "0.98";
+      background_opacity = "0.85";
+      enable_audio_bell = "no";
       confirm_os_window_close = 0;
     };
     extraConfig = ''
