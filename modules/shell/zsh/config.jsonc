@@ -25,11 +25,6 @@
       "key": "│  {icon}  \u001b[s{sysname}\u001b[u\u001b[10C│{$3}│{$2}"
     },
     {
-      "type": "datetime",
-      "key": "│  {icon}  Fetched   │{$3}│{$2}",
-      "format": "{year}-{month-pretty}-{day-pretty} {hour-pretty}:{minute-pretty}:{second-pretty} {timezone-name}"
-    },
-    {
       "type": "locale",
       "key": "│  {icon}  Locale    │{$3}│{$2}"
     },
@@ -67,10 +62,6 @@
       "format": "{size-used} \/ {size-total} ({size-percentage}) - {filesystem}",
     },
     {
-      "type": "battery",
-      "key": "│{#cyan}│ {icon}  Battery   │{$4}│{#keys}│{$2}"
-    },
-    {
       "type": "custom",
       "key": "│{#cyan}└──────────────┴{$1}┘{#keys}│",
       "format": ""
@@ -93,11 +84,6 @@
       "type": "display",
       "key": "│{#green}│ {icon}  Display   │{$4}│{#keys}│{$2}",
       "compactType": "original-with-refresh-rate"
-    },
-    {
-      "type": "gpu",
-      "key": "│{#green}│ {icon}  G-Driver  │{$4}│{#keys}│{$2}",
-      "format": "{driver}"
     },
     {
       "type": "custom",

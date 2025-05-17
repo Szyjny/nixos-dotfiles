@@ -1,0 +1,79 @@
+:wq
+— ostatnie słowa niejednego developera
+%
+Why do Java developers wear glasses?
+Because they can't C.
+%
+Neovim: bo nawet Vim był zbyt przyjazny.
+%
+I use Arch, btw.
+%
+To exit Vim, press Alt+F4.
+Twice.
+%
+There are two hard things in programming: naming things, cache invalidation, and off-by-one errors.
+%
+Never trust a developer who hasn’t cried in front of a terminal.
+%
+You haven't really used Git until you've force pushed to `main` on Friday at 4:59 PM.
+%
+I don't need a debugger.
+I just `printf` my way into madness.
+%
+alias rm='echo "Nope."'
+%
+My code doesn't have bugs.
+It just develops unexpected features.
+%
+99 little bugs in the code,
+99 bugs in the code,
+take one down, patch it around,
+127 bugs in the code.
+%
+NeoVim: now with more Lua and less life.
+%
+$ make me a sandwich
+> What? Make it yourself.
+$ sudo make me a sandwich
+> Okay.
+%
+:w !sudo tee %
+— magią stoi Vim
+%
+"Works on my machine" is the new "It compiles"
+%
+How do you generate a random string?
+Put a junior developer in front of `vim` and tell them to exit.
+%
+If debugging is the process of removing bugs,
+then programming must be the process of putting them in.
+%
+Why do programmers prefer dark mode?
+Because light attracts bugs.
+%
+git commit -m "Fixed things"
+# 10 minutes later
+git revert
+%
+Jak zamknąć Vim?
+Nie możesz. Vim zamyka ciebie.
+%
+W pracy używam Windowsa, ale po pracy się rozgrzeszam.
+%
+Użytkownik: "Zepsułem system".
+Admin: "Co zrobiłeś?"
+Użytkownik: "sudo su"
+%
+Dostałem bana na StackOverflow za zbyt dobre pytanie.
+%
+Nix: Gdy chcesz, żeby konfiguracja była tak trudna, jak twoje życie.
+%
+Zainstalowałem Vima dla zabawy.
+Zostałem dla cierpienia.
+%
+Kiedy ostatnio widziałeś GUI?
+Nie pamiętam... używam sway.
+%
+"Czy to bug, czy feature?"
+Tak.
+%

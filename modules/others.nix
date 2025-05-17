@@ -5,37 +5,20 @@
     # Langs
     gcc
     cmake
+    # libstdc++
+    ftxui
+    cmake-language-server
 
     nodejs
     bun
 
     python3
     marksman
+    openvpn
+
+    flameshot
 
     # Libraries
     # manim
-
-    # PHP
-    # mariadb
-    # apacheHttpd
-    # phpmyadmin
-    # php
   ];
-
-  # systemd.services.mysql = {
-  #   enable = false;
-  #   startWhenNeeded = true;
-  # };
-  #
-  # systemd.services.apache = {
-  #   enable = false;
-  #   startWhenNeeded = true;
-  #   serviceConfig.ExecStart = "/opt/lampp/lampp start";
-  #   serviceConfig.ExecStop = "/opt/lampp/lampp stop";
-  # };
-  #
-  # systemd.services.phpmyadmin = {
-  #   enable = false;
-  #   startWhenNeeded = true;
-  # };
 }

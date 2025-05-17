@@ -124,3 +124,4 @@ function t() {
   fi
 }
 
+fortune ~/devjokes | cowsay -f sus
