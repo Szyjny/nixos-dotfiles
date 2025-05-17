@@ -5,7 +5,12 @@
   cd = "z";
   tmss = "tms switch";
   ":q" = "exit";
-  update = "nix-channel --update && home-manager switch --refresh && source ~/.zshrc && swaymsg reload";
+  update = '''
+    nix-channel --update &&
+    home-manager switch --refresh &&
+    source ~/.zshrc && swaymsg reload &&
+    strfile ~/.config/home-manager/modules/shell/zsh/devjokes ~/.config/home-manager/modules/shell/zsh/devjokes.dat
+  ''';
 
   # Rice / Visuals
   ff = "fastfetch";

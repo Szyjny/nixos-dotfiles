@@ -1,15 +1,6 @@
 { pkgs, ... }:
 
-let
-  devjokesDat = pkgs.runCommand "devjokes.dat" {
-    buildInputs = [ pkgs.strfile ];
-    src = ./devjokes;
-  } ''
-    cp $src devjokes
-    strfile devjokes devjokes.dat
-    cp devjokes.dat $out
-  '';
-in {
+{
   home.packages = with pkgs; [
     # General
     zsh
@@ -59,5 +50,5 @@ in {
 
   home.file.".config/fastfetch/config.jsonc".source = ./config.jsonc;
   home.file.".devjokes".source = ./devjokes;
-  home.file.".devjokes.dat".source = devjokesDat;
+  home.file.".devjokes.dat".source = ./devjokes.dat;
 }
