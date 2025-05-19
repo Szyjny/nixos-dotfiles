@@ -24,6 +24,7 @@
     cbonsai
     eza
     bat
+    delta
 
     # Others
     btop

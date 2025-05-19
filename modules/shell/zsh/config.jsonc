@@ -29,6 +29,10 @@
       "key": "│  {icon}  Locale    │{$3}│{$2}"
     },
     {
+      "type": "localip",
+      "key": "│  {icon}  Local IP  │{$3}│{$2}"
+    },
+    {
       "type": "colors",
       "key": "│  {icon}  Colors    │{$4} │{#keys}{$2}",
       "symbol": "circle"
