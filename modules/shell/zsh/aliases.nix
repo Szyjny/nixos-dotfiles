@@ -9,7 +9,8 @@
   update = ''
     nix-channel --update &&
     home-manager switch --refresh &&
-    source ~/.zshrc && swaymsg reload &&
+    source ~/.zshrc &&
+    swaymsg reload &&
     strfile ~/.config/home-manager/modules/shell/zsh/devjokes ~/.config/home-manager/modules/shell/zsh/devjokes.dat
   '';
 

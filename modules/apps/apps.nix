@@ -6,9 +6,10 @@
   ];
 
   home.packages = with pkgs; [
-    spotify
     libreoffice
     gimp
     xfce.thunar
+    vscodium
+    ida-free
   ];
 }

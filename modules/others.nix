@@ -1,11 +1,10 @@
-{ pkgs, ... }:
+{ pkgs, lib, config,  ... }:
 
 {
   home.packages = with pkgs; [
     # Langs
     gcc
     cmake
-    # libstdc++
     ftxui
     cmake-language-server
 
@@ -18,17 +17,15 @@
 
     flameshot
     flatpak
-
-    # Libraries
-    # manim
   ];
 
   programs.direnv.enable = true;
   programs.direnv.nix-direnv.enable = true;
 
   home.activation.installFlatpaks = lib.hm.dag.entryAfter ["writeBoundary"] ''
-    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-    flatpak install -y flathub com.spotify.Client
-    flatpak install -y flathub app.zen_browser.zen
+    ${pkgs.flatpak}/bin/flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+    ${pkgs.flatpak}/bin/flatpak install --user -y flathub com.spotify.Client
+    ${pkgs.flatpak}/bin/flatpak install --user -y flathub app.zen_browser.zen
   '';
 }
+
