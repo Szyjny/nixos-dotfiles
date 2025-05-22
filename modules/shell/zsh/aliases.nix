@@ -18,6 +18,7 @@
   ff = "fastfetch";
   bonsai = "cbonsai -l 40 -s 9";
   grep = "grep --color=auto";
+  sus = "fortune ~/devjokes | cowsay -f sus";
 
   # Going back
   b = "cd ..";

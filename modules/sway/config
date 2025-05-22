@@ -14,7 +14,7 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term kitty
+set $term kitty -- zsh -i -l -c 'source ~/autoload_tmux; exec zsh'
 # Your preferred application launcher
 set $menu wofi --show drun
 # set $menu rofi -show drun
@@ -169,6 +169,8 @@ input * {
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
+
+    # bindsym $mod+Shift+w exec ~/set_random_wallpeper.sh
 #
 # Scratchpad:
 #
