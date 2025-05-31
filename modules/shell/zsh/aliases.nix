@@ -10,6 +10,7 @@
     nix-channel --update &&
     home-manager switch --refresh &&
     source ~/.zshrc &&
+    tmux source-file ~/.tmux.conf &&
     swaymsg reload &&
     strfile ~/.config/home-manager/modules/shell/zsh/devjokes ~/.config/home-manager/modules/shell/zsh/devjokes.dat
   '';
