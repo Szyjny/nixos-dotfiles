@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     sway
     wofi
+    wofi-emoji
     wl-clipboard
     nerd-fonts.space-mono
   ];
@@ -14,7 +15,7 @@
   home.sessionVariables = {
     GTK_THEME = "Adwaita:dark";
     QT_QPA_PLATFORMTHEME = "qt5ct";
-    QT_STYLE_OVERRIDE = "kvantum"; # jeśli używasz Kvantum do stylów Qt
+    # QT_STYLE_OVERRIDE = "kvantum"; # jeśli używasz Kvantum do stylów Qt
     XCURSOR_THEME = "Bibata-Modern-Ice"; # (opcjonalnie, by spójnie wyglądał kursor)
     XDG_CURRENT_DESKTOP = "sway"; # niektóre aplikacje sprawdzają to
     XDG_SESSION_TYPE = "wayland";

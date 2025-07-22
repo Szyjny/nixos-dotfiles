@@ -1,99 +1,58 @@
-# Default config for sway
-#
-# Copy this to ~/.config/sway/config and edit it to your liking.
-#
-# Read `man 5 sway` for a complete reference.
-
-### Variables
-#
-# Logo key. Use Mod1 for Alt.
 set $mod Mod4
-# Home row direction keys, like vim
+
 set $left h
 set $down j
 set $up k
 set $right l
-# Your preferred terminal emulator
-set $term kitty -- zsh -i -l -c 'source ~/autoload_tmux; exec zsh'
-# Your preferred application launcher
+
+set $term_tmux kitty -- zsh -i -l -c 'source ~/autoload_tmux; exec zsh'
+set $term kitty
 set $menu wofi --show drun
-# set $menu rofi -show drun
+set $emoji wofi-emoji
+set $file_manager thunar
 
-### Output configuration
-#
-# Default wallpaper (more resolutions are available in /run/current-system/sw/share/backgrounds/sway/)
-# output * bg /run/current-system/sw/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+exec gammastep -P -O 4500
+
 output * bg ~/Pictures/current_wallpaper/* fill
-# output HDMI-A-1 brightness 1.0
-
-#
-# Example configuration:
-#
-#   output HDMI-A-1 resolution 1920x1080 position 1920,0
-#
-# You can get the names of your outputs by running: swaymsg -t get_outputs
-
-### Idle configuration
-#
-# Example configuration:
-#
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-#          before-sleep 'swaylock -f -c 000000'
-#
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
-
-### Input configuration
-#
-# Example configuration:
-
 
 input * {
   xkb_layout pl
   xkb_options "caps:escape"
 }
 
-#   input "2:14:SynPS/2_Synaptics_TouchPad" {
-#       dwt enabled
-#       tap enabled
-#       natural_scroll enabled
-#       middle_emulation enabled
-#   }
-#
-# You can get the names of your inputs by running: swaymsg -t get_inputs
-# Read `man 5 sway-input` for more information about this section.
+assign [app_id="kitty"] 1
+assign [class="Spotify"] 1
+assign [app_id="zen"] 2
+assign [app_id="com.hex-rays."] 3
 
-### Key bindings
-#
-# Basics:
-#
-    # Start a terminal
-    bindsym $mod+Return exec $term
+for_window [app_id="zen|kitty"] border pixel 2
+# for_window [app_id="thunar"] floating enable, resize set 800 800, move position 920 100
 
-    # Kill focused window
-    bindsym $mod+q kill
+bindsym $mod+Return exec $term_tmux
+bindsym $mod+Alt+Return exec $term
+bindsym $mod+apostrophe exec $file_manager
+bindsym $mod+d exec $menu
+bindsym $mod+Shift+d exec $emoji
 
-    # Start your launcher
-    bindsym $mod+d exec $menu
-    bindsym $mod+p exec flameshot gui
-    bindsym $mod+Shift+w exec ~/set_random_wallpeper.sh
-    bindsym $mod+Shift+s exec ~/set_wallpaper.sh
+bindsym $mod+q kill
+bindsym $mod+p exec flameshot gui -p ~/Pictures/screenshots
 
-    # Drag floating windows by holding down $mod and left mouse button.
-    # Resize them with right mouse button + $mod.
-    # Despite the name, also works for non-floating windows.
-    # Change normal to inverse to use left mouse button for resizing and right
-    # mouse button for dragging.
-    floating_modifier $mod normal
+bindsym $mod+Shift+w exec ~/set_random_wallpeper.sh
+bindsym $mod+Shift+s exec ~/set_wallpaper.sh
 
-    # Reload the configuration file
-    bindsym $mod+Shift+c reload
+# Drag floating windows by holding down $mod and left mouse button.
+# Resize them with right mouse button + $mod.
+# Despite the name, also works for non-floating windows.
+# Change normal to inverse to use left mouse button for resizing and right
+# mouse button for dragging.
+floating_modifier $mod normal
 
-    # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec sway exit
+# Reload the configuration file
+bindsym $mod+Shift+c reload
+
+# Exit sway (logs you out of your Wayland session)
+bindsym $mod+Shift+e exec sway exit
+
 #
 # Moving around:
 #
@@ -213,7 +172,7 @@ bindsym $mod+r mode "resize"
 # Utilities:
 #
     # Special keys to adjust volume via PulseAudio
-    bindsym --locked F1 exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
+    # bindsym --locked F1 exec pactl set-source-mute \@DEFAULT_SOURCE@ toggle
     bindsym --locked F2 exec pactl set-sink-volume \@DEFAULT_SINK@ -2%
     bindsym --locked Shift+F2 exec pactl set-sink-volume \@DEFAULT_SINK@ -5%
     bindsym --locked F3 exec pactl set-sink-volume \@DEFAULT_SINK@ +2%
@@ -224,8 +183,6 @@ bindsym $mod+r mode "resize"
     bindsym --locked Shift+F7 exec brightnessctl set 5%-
     bindsym --locked F8 exec brightnessctl set 2%+
     bindsym --locked Shift+F8 exec brightnessctl set 5%+
-    # Special key to take a screenshot with grim
-    bindsym Print exec grim
 
 #
 # Status Bar:
@@ -242,7 +199,7 @@ bar {
     colors {
         statusline #ffffff
         background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
+        inactive_workspace #323232  #323232 #bbbbbb
     }
 }
 

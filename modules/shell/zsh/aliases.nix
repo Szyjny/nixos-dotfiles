@@ -1,6 +1,5 @@
 {
   # General
-  cls = "clear";
   n = "nvim";
   cd = "z";
   diff="delta";

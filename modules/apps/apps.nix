@@ -6,10 +6,11 @@
   ];
 
   home.packages = with pkgs; [
-    libreoffice
-    gimp
-    xfce.thunar
+    # libreoffice
+    # gimp
+    # xfce.thunar
     vscodium
     ida-free
+    evince
   ];
 }

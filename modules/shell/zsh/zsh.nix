@@ -4,7 +4,7 @@
   home.packages = with pkgs; [
     # General
     zsh
-    neovim
+    # neovim
     tmux
 
     # Git
@@ -25,17 +25,20 @@
     eza
     bat
     delta
+    cava
 
     # Others
     btop
     tldr
     unzip
 
+    gdb
     lua-language-server
-    clang-tools  # clangd
-    rust-analyzer
+    clang-tools
     gcc
     acpi
+    nil
+    nixpkgs-fmt
 
     cowsay
     fortune
@@ -48,6 +51,8 @@
     shellAliases = import ./aliases.nix;
     initExtra = builtins.readFile ./init-extra.zsh;
   };
+
+  programs.direnv.enable = true;
 
   home.file.".config/fastfetch/config.jsonc".source = ./config.jsonc;
   home.file.".devjokes".source = ./devjokes;

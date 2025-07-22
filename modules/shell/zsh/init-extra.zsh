@@ -112,28 +112,14 @@ function ltree() {
   eza --tree --level="$lvl" --icons --git "$dir"
 }
 
-# Start new Tmux session
-function t() {
-  local session_name="${1:-$(basename "$PWD")}"
-
-  if [[ -f "./tmux.sh" && -r "./tmux.sh" ]]; then
-    chmod +x ./tmux.sh 2>/dev/null
-    tmux new-session -s "$session_name" "bash ./tmux.sh"
-  else
-    tmux new-session -s "$session_name"
-  fi
-}
-
 function tmux-new() {
   local session_name="$1"
   if [ -z "$session_name" ]; then
-    echo "Użycie: tmux-new <nazwa_sesji>"
     return 1
   fi
 
   tmux has-session -t "$session_name" 2>/dev/null
   if [ $? -eq 0 ]; then
-    echo "Sesja '$session_name' już istnieje. Przełączam..."
   else
     tmux new-session -d -s "$session_name" || return 1
   fi

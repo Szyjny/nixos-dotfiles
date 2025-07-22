@@ -2,16 +2,16 @@
 
 let
   mpdDir = "${config.home.homeDirectory}/.local/share/mpd";
-in
-{
+in {
   home.packages = with pkgs; [
-    ncmpcpp
     mpd
+    ncmpcpp
     mpc-cli
     spotdl
     ffmpeg
   ];
 
+  # Konfiguracja MPD
   home.file.".config/mpd/mpd.conf".text = ''
     music_directory    "${mpdDir}/music"
     playlist_directory "${mpdDir}/playlists"
@@ -30,9 +30,19 @@ in
 
     audio_output {
         type            "fifo"
-        name            "mpd visualizer"
+        name            "Visualizer"
         path            "/tmp/mpd.fifo"
         format          "44100:16:2"
     }
   '';
+
+  # Konfiguracja ncmpcpp
+  home.file.".config/ncmpcpp/config".text = ''
+    mpd_host = "localhost"
+    mpd_port = "6600"
+
+    visualizer_output_name = "Visualizer"
+    visualizer_in_stereo = yes
+  '';
 }
+
