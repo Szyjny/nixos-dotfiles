@@ -49,7 +49,7 @@
     syntaxHighlighting.enable = true;
 
     shellAliases = import ./aliases.nix;
-    initExtra = builtins.readFile ./init-extra.zsh;
+    initContent = builtins.readFile ./init-extra.zsh;
   };
 
   programs.direnv.enable = true;

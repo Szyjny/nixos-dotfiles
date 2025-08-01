@@ -105,10 +105,6 @@
       "key": "│{#yellow}│ {icon}  Shell     │{$4}│{#keys}│{$2}"
     },
     {
-      "type": "terminal",
-      "key": "│{#yellow}│ {icon}  Terminal  │{$4}│{#keys}│{$2}"
-    },
-    {
       "type": "terminalfont",
       "key": "│{#yellow}│ {icon}  Term Font │{$4}│{#keys}│{$2}"
     },
@@ -126,34 +122,6 @@
       "type": "custom",
       "key": "│{#red}┌──────────────┬{$1}┐{#keys}│\u001b[39D",
       "format": "{#bright_red} Development "
-    },
-    {
-      "type": "command",
-      "keyIcon": "",
-      "key": "│{#red}│ {icon}  Rust      │{$4}│{#keys}│{$2}",
-      "text": "rustc --version | cut -d' ' -f2",
-      "format": "rustc {}"
-    },
-    {
-      "type": "command",
-      "keyIcon": "",
-      "key": "│{#red}│ {icon}  NodeJS    │{$4}│{#keys}│{$2}",
-      "text": "node --version",
-      "format": "node {~1}"
-    },
-    {
-      "type": "command",
-      "keyIcon": "",
-      "key": "│{#red}│ {icon}  Go        │{$4}│{#keys}│{$2}",
-      "text": "go version | cut -d' ' -f3",
-      "format": "go {~2}"
-    },
-    {
-      "type": "command",
-      "keyIcon": "",
-      "key": "│{#red}│ {icon}  Zig       │{$4}│{#keys}│{$2}",
-      "text": "zig version",
-      "format": "zig {}"
     },
     {
       "type": "editor",

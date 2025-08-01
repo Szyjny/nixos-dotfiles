@@ -26,6 +26,7 @@
     zellij
     nvtopPackages.amd
     wine
+    gimp
   ];
 
   programs.direnv.enable = true;

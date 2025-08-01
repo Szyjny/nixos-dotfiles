@@ -10,7 +10,7 @@
     # gimp
     # xfce.thunar
     vscodium
-    ida-free
+    # ida-free
     evince
   ];
 }

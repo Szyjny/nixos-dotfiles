@@ -7,11 +7,17 @@ set $right l
 
 set $term_tmux kitty -- zsh -i -l -c 'source ~/autoload_tmux; exec zsh'
 set $term kitty
+
 set $menu wofi --show drun
 set $emoji wofi-emoji
+
+set $clipboard_history cliphist list | wofi -S dmenu | cliphist decode | wl-copy
+set $clipboard_clear cliphist wipe
+
 set $file_manager thunar
 
 exec gammastep -P -O 4500
+# exec wl-paste --watch cliphist store
 
 output * bg ~/Pictures/current_wallpaper/* fill
 
@@ -34,11 +40,15 @@ bindsym $mod+apostrophe exec $file_manager
 bindsym $mod+d exec $menu
 bindsym $mod+Shift+d exec $emoji
 
+bindsym $mod+s exec $clipboard_history
+bindsym $mod+x exec $clipboard_clear
+
 bindsym $mod+q kill
+bindsym $mod+m ~/wofi_math.sh
 bindsym $mod+p exec flameshot gui -p ~/Pictures/screenshots
 
 bindsym $mod+Shift+w exec ~/set_random_wallpeper.sh
-bindsym $mod+Shift+s exec ~/set_wallpaper.sh
+bindsym $mod+Shift+Alt+w exec ~/set_wallpaper.sh
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.
@@ -114,7 +124,7 @@ bindsym $mod+Shift+e exec sway exit
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
+    # bindsym $mod+s layout stacking
     bindsym $mod+w layout tabbed
     bindsym $mod+e layout toggle split
 

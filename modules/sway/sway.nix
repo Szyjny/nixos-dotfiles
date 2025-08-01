@@ -6,6 +6,8 @@
     wofi
     wofi-emoji
     wl-clipboard
+    cliphist
+    bc
     nerd-fonts.space-mono
   ];
 
