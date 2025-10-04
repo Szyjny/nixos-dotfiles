@@ -38,6 +38,7 @@
     gcc
     acpi
     nil
+    rust-analyzer
     nixpkgs-fmt
 
     cowsay

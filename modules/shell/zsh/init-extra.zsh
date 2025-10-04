@@ -17,10 +17,26 @@ function overthewire() {
 
 # C++ Compilation
 function cpp() {
-  local output="$1"
-  local main_file="${1}.cpp"
-  shift
-  g++ "$main_file" -o "$output" && ./"$output" "$@" && rm ./"$output"
+    local enable_core=0
+    if [[ "$1" == "-c" ]]; then
+        enable_core=1
+        shift
+    fi
+
+    local output="$1"
+    local main_file="${1}.cpp"
+    shift
+    g++ "$main_file" -o "$output" || return 1
+
+    if [[ $enable_core -eq 1 ]]; then
+        ulimit -c unlimited
+        echo "Core dumps włączone dla tej sesji."
+    else
+        ulimit -c 0
+    fi
+
+    ./"$output" "$@"
+    rm ./"$output"
 }
 
 # C Compilation
@@ -126,5 +142,9 @@ function tmux-new() {
 
   tmux switch-client -t "$session_name"
 }
+
+export BROWSER="firefox"
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator
 
 fortune ~/devjokes | cowsay -f sus

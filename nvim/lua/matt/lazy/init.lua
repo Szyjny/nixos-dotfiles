@@ -13,6 +13,16 @@ return {
     "neovim/nvim-lspconfig",
   },
   {
+    "jghauser/follow-md-links.nvim",
+    ft = "markdown",
+    config = function()
+      -- Podmieniamy gf tylko w markdownie
+      vim.keymap.set("n", "gf", function()
+        require("follow-md-links").follow_link()
+      end, { desc = "Follow Markdown link", buffer = true })
+    end,
+  },
+  {
     "hrsh7th/nvim-cmp",
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",

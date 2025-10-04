@@ -4,6 +4,9 @@
   home.packages = with pkgs; [
     # Langs
     gcc
+    gdb
+    gdb-dashboard
+    cgdb
     cmake
     cmake-language-server
 
@@ -23,10 +26,20 @@
     udisks
     tigervnc
 
-    zellij
+    # polybar
+    # zellij
     nvtopPackages.amd
-    wine
+    # wine
     gimp
+    usbutils
+
+    # vieb
+    chess-tui
+    zed-editor
+    virt-manager
+    android-studio
+    libreoffice-qt
+    sdkmanager
   ];
 
   programs.direnv.enable = true;
@@ -41,5 +54,12 @@
   home.sessionVariables = {
     QT_QPA_PLATFORMTHEME = "qt5ct";
   };
+
+  home.file.".gdbinit".text = ''
+    dashboard -style syntax_highlighting on
+    dashboard -style style low
+    dashboard variables -style value "\033[38;5;242m"
+    dashboard variables -style highlight "\033[48;5;236m"
+  '';
 }
 
